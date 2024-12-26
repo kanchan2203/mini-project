@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title>Random  Password Generator</title>
+      <style>
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           background: linear-gradient( to right, #9369ba,#4c1d7d);
+           display: flex;
+           justify-content: center;
+           align-items: center;
+            
+        }
+        .cont {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+         background: rgb(143, 99, 205);
+           padding: 40px;
+           border-radius: 15px;
+           box-shadow: 0 10px rgba(0, 0, 0, 0.15);
+           
+           
+        }
+        .box{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .box p {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #131111;
+        }
+        .box input {
+            padding: 12px;
+            width: 80%;
+            border: 1px solid #b2dfdb;
+            border-radius: 5px;
+            font-size: 18px;
+            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+        .box button {
+            background-color: #00796b;
+            color: white;
+            background: #6a116a;
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .box button:hover {
+            background-color: #004d40;
+        }
+      </style>
+  </head>
+
+
+    <body>
+        <div class="cont">
+            <div class="box">
+        <p>Random Password Generate</p><br>
+        <div class="input"><br>
+            <input type="text" placeholder="Enter First Name" id="fname"><br><br>
+            <input type="text" placeholder="Enter Last Name" id="lname"><br><br>
+            <input type="number" placeholder="Enter Number" id="num"><br><br>
+
+        </div>
+        <input type="text"  id="Password"><br><br>
+        <button onclick="pass()">Generate Password</button>
+    </div>
+    </div>
+    
+        
+        <script>
+            const Password = document.getElementById("Password");
+
+            function pass(){
+                const name = document.getElementById("fname").value;
+                const lname = document.getElementById("lname").value;
+                const number = document.getElementById("num").value;
+                const symbol = "@#$%/";
+                let pass = "";
+
+                pass +=  name[Math.floor(Math.random()* name.length)];
+                pass +=  name[Math.floor(Math.random()* name.length)];
+                pass +=  name[Math.floor(Math.random()* name.length)];
+                pass +=  name[Math.floor(Math.random()* name.length)];
+
+                pass += lname[Math.floor(Math.random()*lname.length)];
+                pass +=  lname[Math.floor(Math.random()* lname.length)];
+
+                pass +=  symbol[Math.floor(Math.random()* symbol.length)];
+
+                pass +=  number[Math.floor(Math.random()* number.length)];
+                pass +=  number[Math.floor(Math.random()* number.length)];
+                pass +=  number[Math.floor(Math.random()* number.length)];
+                pass +=  number[Math.floor(Math.random()* number.length)];
+                pass +=  number[Math.floor(Math.random()* number.length)];
+
+                Password.value = pass;
+                
+        
+            }
+        </script>
+    </body>
+</html>
