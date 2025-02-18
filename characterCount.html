@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Count</title>
+    <style>
+        textarea{
+            width: 40%;
+            height: 100px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+           
+ }
+        p{
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Character Counter</h2>
+    <textarea  id="inputtext"></textarea>
+    <p> Character count : <span id="charcount">0</span> </p>
+
+    <script>
+        let inputtext = document.getElementById('inputtext');
+        let count = document.getElementById('charcount');
+        inputtext.addEventListener('input', () =>{
+            count.innerText = inputtext.value.length;
+        });
+
+    </script>
+</body>
+</html>
